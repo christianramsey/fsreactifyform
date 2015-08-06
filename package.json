@@ -1,0 +1,22 @@
+{
+  "name": "domusroomsfs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "rx"
+  ],
+  "author": "Christian Ramsey",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.8.21"
+  },
+  "dependencies": {
+    "fluxstream": "^2.0.0",
+    "react": "^0.13.3",
+    "rx": "^3.0.0"
+  }
+}
