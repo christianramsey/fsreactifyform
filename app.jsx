@@ -21,20 +21,17 @@ var rooms = {
 
     },
 
-    "room3": {
+    "room3": { },
 
-
-    },
-
-    "room4": {
-
-    }
+    "room4": { }
 
 };
 
+
+
 var SearchBar = React.createClass({
     getInitialState: function() {
-        return {rooms: {1: {12:true,18:true}}};
+        return rooms
     },
     render: function() {
         var avails = this.state.rooms;
