@@ -1,4 +1,37 @@
 var React = require('react');
+
+var rooms = {
+
+    "room1": {
+        1:true,
+        3:true,
+        4:true,
+        9:true,
+        23:true,
+        24:true
+    },
+
+    "room2": {
+        1:true,
+        3:true,
+        5:true,
+        9:true,
+        21:true,
+        22:true
+
+    },
+
+    "room3": {
+
+
+    },
+
+    "room4": {
+
+    }
+
+};
+
 var SearchBar = React.createClass({
     getInitialState: function() {
         return {rooms: {1: {12:true,18:true}}};
