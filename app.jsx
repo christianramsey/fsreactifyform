@@ -66,7 +66,7 @@ var SearchBar = React.createClass({
         var current_time = getCurrentTime();
 
         return (
-            <form>
+            <div>
 
 
               <h5> {{ current_time }}  </h5>
@@ -77,7 +77,7 @@ var SearchBar = React.createClass({
                 &nbsp;for&nbsp;
                 <span style={spanStyle}  class="placeholder input-container"> 2 hours</span>
 
-            </form>
+            </div>
         );
     }
 });

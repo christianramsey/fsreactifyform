@@ -19,7 +19,7 @@ body {
   display: inline-block;
   position: relative; }
 
-form {
+div {
   max-width: 500px;
   margin: 100px auto 0 auto;
   font-family: roboto;
