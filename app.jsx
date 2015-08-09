@@ -1,5 +1,4 @@
 var React = require('react');
-var Rx = require('rx');
 
 var moment = require('moment');
 // advise here  -> http://stackoverflow.com/questions/29295846/how-can-i-use-javascript-library-such-as-moment-js-in-react-native
