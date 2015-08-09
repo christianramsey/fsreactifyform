@@ -9,6 +9,16 @@
 body {
   background-color: #04b8ad; }
 
+
+.input-container {
+  border-bottom: 1px dashed #007a73;
+  color: #007a73;
+  padding: 6px;
+  margin-left: -6px;
+  margin-right: -6px;
+  display: inline-block;
+  position: relative; }
+
 form {
   max-width: 500px;
   margin: 100px auto 0 auto;
@@ -17,6 +27,7 @@ form {
   font-size: 40px;
   line-height: 60px;
   color: white; }
+.input-contain
   form .input-container {
     border-bottom: 1px dashed #007a73;
     color: #007a73;
