@@ -1,49 +1,68 @@
 var React = require('react');
+var Rx = require('rx');
 
-var rooms = {
+var moment = require('moment');
+// advise here  -> http://stackoverflow.com/questions/29295846/how-can-i-use-javascript-library-such-as-moment-js-in-react-native
+
+var appData = {
+
+    "room_names": ["room1","room2","room3","room4"],
 
     "room1": {
-        1:true,
-        3:true,
-        4:true,
-        9:true,
-        23:true,
-        24:true
+        times: [1,4,5,6,7,8,22],
+        name: "First Room"
     },
 
     "room2": {
-        1:true,
-        3:true,
-        5:true,
-        9:true,
-        21:true,
-        22:true
+        times: [1,4,5,6,7,8,22],
+        name: "Second Room"
 
     },
 
-    "room3": { },
+    "room3": {
+        times: [1,4,5,6,7,8,22],
+        name: "Third Room"
 
-    "room4": { }
+    },
+
+    "room4": {
+        times: [1,4,5,6,7,8,22],
+        name: "Fourth Room"
+
+    }
 
 };
 
+var getRooms = function() {
+    return appData;
+};
 
+var getCurrentTime = function() {
+    var now = moment().format('MMMM Do YYYY, h:mm:ss a');
+    return now;
+
+};
 
 var SearchBar = React.createClass({
     getInitialState: function() {
-        return rooms
+        return {"rooms":getRooms()}
     },
     render: function() {
-        var avails = this.state.rooms;
+        var rms = this.state.rooms;
+        var current_time = getCurrentTime();
+
         return (
             <form>
 
-              <h1>{{avails}}</h1>
+
+              <h5> {{ current_time }}  </h5>
                 I want to book
               <span id="atmosphere" class="input-container">
                 <span class="placeholder"> any room</span>
                 <span class="input selectbox">
                   <select class="fancy-select hidden" name="find_desc">
+
+
                       <option value="any room">Any Room</option>
                       <option value="The Cardigan Room">room #1 (5)</option>
                       <option value="The Applegate Room">room #2 (2)</option>

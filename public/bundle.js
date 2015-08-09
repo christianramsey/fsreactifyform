@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3ac1ea38aef90d3a59f3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "dbb53e147d1632d29f49"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -7988,19 +7988,192 @@
 	"use strict";
 	
 	var React = __webpack_require__(123);
+	
+	var rooms = {
+	
+	    "room1": {
+	        1: true,
+	        3: true,
+	        4: true,
+	        9: true,
+	        23: true,
+	        24: true
+	    },
+	
+	    "room2": {
+	        1: true,
+	        3: true,
+	        5: true,
+	        9: true,
+	        21: true,
+	        22: true
+	
+	    },
+	
+	    "room3": {
+	        2: true,
+	        9: true
+	    },
+	
+	    "room4": {
+	        8: true,
+	        11: true
+	    }
+	
+	};
+	
+	var getRooms = function getRooms() {
+	    return rooms;
+	};
+	
+	console.log({ "rooms": getRooms() });
+	
 	var SearchBar = React.createClass({
 	    displayName: "SearchBar",
 	
+	    getInitialState: function getInitialState() {
+	        return { "rooms": getRooms() };
+	    },
 	    render: function render() {
+	        var rms = this.state.rooms;
+	        var dag = new Date();
 	        return React.createElement(
 	            "form",
 	            null,
-	            React.createElement("input", { type: "text", placeholder: "Search..." }),
+	            rms.map(function (time) {
+	                return React.createElement(
+	                    "li",
+	                    null,
+	                    time
+	                );
+	            }),
+	            ";",
 	            React.createElement(
-	                "p",
+	                "h1",
 	                null,
-	                React.createElement("input", { type: "checkbox" }),
-	                "Only show products in stock"
+	                { rms: rms },
+	                " Hello ",
+	                { dag: dag },
+	                "  "
+	            ),
+	            "I want to book",
+	            React.createElement(
+	                "span",
+	                { id: "atmosphere", "class": "input-container" },
+	                React.createElement(
+	                    "span",
+	                    { "class": "placeholder" },
+	                    " any room"
+	                ),
+	                React.createElement(
+	                    "span",
+	                    { "class": "input selectbox" },
+	                    React.createElement(
+	                        "select",
+	                        { "class": "fancy-select hidden", name: "find_desc" },
+	                        React.createElement(
+	                            "option",
+	                            { value: "any room" },
+	                            "Any Room"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "The Cardigan Room" },
+	                            "room #1 (5)"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "The Applegate Room" },
+	                            "room #2 (2)"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "The Lofter Room" },
+	                            "room #3 (5)"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "The Dungeoun Room" },
+	                            "room #5 (2)"
+	                        )
+	                    )
+	                )
+	            ),
+	            " at",
+	            React.createElement(
+	                "span",
+	                { id: "cuisine", "class": "input-container" },
+	                React.createElement(
+	                    "span",
+	                    { "class": "placeholder" },
+	                    " 10:00 AM"
+	                ),
+	                React.createElement(
+	                    "span",
+	                    { "class": "input selectbox" },
+	                    React.createElement(
+	                        "select",
+	                        { name: "cflt", "class": "fancy-select hidden" },
+	                        React.createElement(
+	                            "option",
+	                            { value: "11:00 AM" },
+	                            "11:00 AM"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "12:00 AM" },
+	                            "12:00 AM"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "13:00 AM" },
+	                            "13:00 AM"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "14:00 AM" },
+	                            "11:00 AM"
+	                        )
+	                    )
+	                )
+	            ),
+	            "for",
+	            React.createElement(
+	                "span",
+	                { id: "cuisine", "class": "input-container" },
+	                React.createElement(
+	                    "span",
+	                    { "class": "placeholder" },
+	                    " 2 hours"
+	                ),
+	                React.createElement(
+	                    "span",
+	                    { "class": "input selectbox" },
+	                    React.createElement(
+	                        "select",
+	                        { name: "cflt", "class": "fancy-select hidden" },
+	                        React.createElement(
+	                            "option",
+	                            { value: "one hour" },
+	                            "1 hour"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "two hours" },
+	                            "2 hours"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "three hours" },
+	                            "3 hours"
+	                        ),
+	                        React.createElement(
+	                            "option",
+	                            { value: "4 hours" },
+	                            "4 hours"
+	                        )
+	                    )
+	                )
 	            )
 	        );
 	    }
