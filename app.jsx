@@ -55,7 +55,7 @@ var spanStyle = {
     marginRight: "-6px",
     display: "inline-block",
     position: "relative"
-}
+};
 
 var SearchBar = React.createClass({
     getInitialState: function() {
@@ -65,8 +65,14 @@ var SearchBar = React.createClass({
         var rms = this.state.rooms;
         var current_time = getCurrentTime();
 
+        var room_1 = rms.room1;
+        var room_2 = rms.room2;
+        var room_3 = rms.room3;
+        var room_4 = rms.room4;
+
         return (
             <div>
+
 
 
               <h5> {{ current_time }}  </h5>
@@ -77,7 +83,31 @@ var SearchBar = React.createClass({
                 &nbsp;for&nbsp;
                 <span style={spanStyle}  class="placeholder input-container"> 2 hours</span>
 
+                <br/>
+                <small>Times:</small>
+                <select>
+                    Times
+                    <option value="" disabled="disabled">Room1</option>
+                    {room_1.times.map(function(time) {
+                        return <option value='{time}'> {time} </option>;
+                    })}
+                    <option value="" disabled="disabled">Room2</option>
+                    {room_2.times.map(function(time) {
+                        return <option value='{time}'> {time} </option>;
+                    })}
+                    <option value="" disabled="disabled">Room3</option>
+                    {room_3.times.map(function(time) {
+                        return <option value='{time}'> {time} </option>;
+                    })}
+                    <option value="" disabled="disabled">Room4</option>
+                    {room_4.times.map(function(time) {
+                        return <option value='{time}'> {time} </option>;
+                    })}
+
+                </select>
+
             </div>
+
         );
     }
 });
